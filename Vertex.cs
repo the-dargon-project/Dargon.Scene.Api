@@ -1,30 +1,27 @@
 ﻿using System;
 using Dargon.PortableObjects;
+using Dargon.Scene.Api.Util;
 
 namespace Dargon.Scene.Api {
    public class Vertex : IPortableObject, IEquatable<Vertex> {
       public Vertex() {}
 
-      public Vertex(Vector3 position, Vector3 normal, Vector2 texCoord) {
-         this.Position = position;
-         this.Normal = normal;
-         this.TexCoord = texCoord;
+      public Vertex(Vector3 position, Vector2 texCoord) {
+         Position = position;
+         TexCoord = texCoord;
       }
 
       public Vector3 Position { get; set; }
-      public Vector3 Normal { get; set; }
       public Vector2 TexCoord { get; set; }
 
       public void Serialize(IPofWriter writer) {
          writer.WriteObject(0, Position);
-         writer.WriteObject(1, Normal);
-         writer.WriteObject(2, TexCoord);
+         writer.WriteObject(1, TexCoord);
       }
 
       public void Deserialize(IPofReader reader) {
          Position = reader.ReadObject<Vector3>(0);
-         Normal = reader.ReadObject<Vector3>(1);
-         TexCoord = reader.ReadObject<Vector2>(2);
+         TexCoord = reader.ReadObject<Vector2>(1);
       }
 
       public override bool Equals(object obj) {
@@ -32,7 +29,7 @@ namespace Dargon.Scene.Api {
       }
 
       public bool Equals(Vertex other) {
-         return Equals(Position, other.Position) && Equals(Normal, other.Normal) && Equals(TexCoord, other.TexCoord);
+         return Equals(Position, other.Position) && Equals(TexCoord, other.TexCoord);
       }
    }
 }

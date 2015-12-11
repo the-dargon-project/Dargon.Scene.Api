@@ -1,7 +1,7 @@
 ﻿using System;
 using Dargon.PortableObjects;
 
-namespace Dargon.Scene.Api {
+namespace Dargon.Scene.Api.Util {
    public class Vector2 : IPortableObject, IEquatable<Vector2> {
       public Vector2() { }
 
