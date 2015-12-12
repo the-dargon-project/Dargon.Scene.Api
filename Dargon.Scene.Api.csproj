@@ -60,6 +60,7 @@
     <Compile Include="DargonSceneApiPofContext.cs" />
     <Compile Include="Mesh.cs" />
     <Compile Include="MeshFactory.cs" />
+    <Compile Include="Util\AABB.cs" />
     <Compile Include="Util\Vector2.cs" />
     <Compile Include="Util\Vector3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

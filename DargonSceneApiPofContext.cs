@@ -9,6 +9,7 @@ namespace Dargon.Scene.Api {
          RegisterPortableObjectType(kBasePofId + 0, typeof(Vector2));
          RegisterPortableObjectType(kBasePofId + 1, typeof(Vector3));
          RegisterPortableObjectType(kBasePofId + 2, typeof(Vertex));
+         RegisterPortableObjectType(kBasePofId + 3, typeof(AABB));
       }
    }
 }
